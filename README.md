@@ -1,4 +1,4 @@
-# The Unimi "Statale" Latex Beamer Template
+# The Unimi "Statale" LaTex Beamer Template
 A common Template for **University of Milan "Statale"** presentations with LaTeX beamer.
 
 This template was adapted by Giorgio Marchetti, ciao@gio.im for Statale's presentations.
