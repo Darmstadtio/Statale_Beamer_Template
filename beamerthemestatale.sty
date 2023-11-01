@@ -1,7 +1,6 @@
 % Template for Statale presentations with LaTeX beamer.
 %
-% Adapted by Giorgio Marchetti, ciao@gio.im for
-% Statale presentations.
+% Adapted by Giorgio Marchetti, ciao@gio.im for Statale presentations.
 % 
 % Original template by Federico Zenith, federico.zenith@sintef.no.
 % Derived (through several iterations) from Håvard Berland's
@@ -23,7 +22,7 @@
 
 % TODO: remove top-right logo from title page
 
-\ProvidesPackage{beamerthemesintef}[2021/11/02]
+\ProvidesPackage{beamerthemestatale}[2021/11/02]
 
 \RequirePackage{etoolbox}
 \RequirePackage{tikz}
@@ -36,7 +35,7 @@
 \RequirePackage{caladea,carlito}
 \renewcommand{\familydefault}{\sfdefault}
 
-\RequirePackage{graphicx,sintefcolor}
+\RequirePackage{graphicx,statalecolors}
 
 % No navigation symbols
 \setbeamertemplate{navigation symbols}{}
@@ -60,7 +59,7 @@
     \footlinepayoff{}
     \setbeamercolor{footline}{fg=darkgray, bg=}
     \setbeamercolor{block title}{fg=white,bg=maincolor}
-    \setbeamercolor{block body}{fg=white,bg=maincolor}
+    \setbeamercolor{block body}{fg=black,bg=statalegray}
   }{
     \footlinepayoff{\@footlineauthor\inserttitle}
     \setbeamercolor{footline}{fg=white,bg=#1}
@@ -84,21 +83,21 @@
 		\setbeamercolor{normal text}{fg=white,bg=maincolor}
 		\setbeamercolor{structure}{fg=white}
 		\renewcommand{\@logo}{whitelogo}
-		\setbeamercolor{block title}{fg=maincolor,bg=sintefgrey}
-		\setbeamercolor{block body}{fg=darkgray,bg=sintefgrey}
+		\setbeamercolor{block title}{fg=maincolor,bg=statalegrey}
+		\setbeamercolor{block body}{fg=darkgray,bg=statalegrey}
 	}{%
         \setbeamercolor{footline}{fg=darkgray}
 		\setbeamercolor{normal text}{fg=darkgray,bg=white}
 		\setbeamercolor{structure}{fg=maincolor}
 		\renewcommand{\@logo}{logo}
 		\setbeamercolor{block title}{fg=white,bg=maincolor}
-		\setbeamercolor{block body}{fg=darkgray,bg=sintefgrey}
+		\setbeamercolor{block body}{fg=darkgray,bg=statalegrey}
 	}
 }
 \themecolor{white} % Default: white theme
 
 \setbeamercolor{title}{fg=maincolor,bg=white}
-\setbeamercolor{alerted text}{fg=sintefred}
+\setbeamercolor{alerted text}{fg=statalered}
 \setbeamercolor{author}{fg=black}
 \setbeamercolor{date}{fg=black}
 
@@ -112,7 +111,8 @@
 \setbeamerfont{block title}{series=\centering\bfseries}
 
 % Code to get prettier boxes
-\setbeamertemplate{blocks}[rounded]
+ \setbeamertemplate{blocks}[rounded]
+
 
 % Bullets in several levels
 \setbeamertemplate{itemize item}{\textbullet}
