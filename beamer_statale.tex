@@ -1,0 +1,65 @@
+% **************************************************************
+% Hi! Edit this file for your presentation!
+% **************************************************************
+
+% ==================///==================///==================///
+% ==================/// LATEX'S STUFF
+% ==================///==================///==================///
+
+\documentclass{beamer}
+\usepackage{amsfonts,amsmath,oldgerm}
+\usetheme{_statale}
+\usefonttheme[onlymath]{serif}
+
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+\titlebackground*{assets/background}
+
+% ==================///==================///==================///
+% ==================/// SPLASH PAGE
+% ==================///==================///==================///
+
+\title{Statale Beamer Presentation Theme}
+\subtitle{Using \LaTeX\ to prepare slides}
+\course{Master's Degree in Philosophical Science}
+\author{\href{mailto:ciao@gio.im}{Giorgio Marchetti}}
+\IDnumber{1234567}
+
+% ==================///==================///==================///
+% ==================/// START PRESENTATION
+% ==================///==================///==================///
+
+\begin{document}
+\maketitle
+
+\footlinecolor{maincolor}
+\begin{frame}
+
+Hi! I'm Giorgio and this template is a based on \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation} from \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} and its derivation \hrefcol{https://github.com/TOB-KNPOB/Beamer-LaTeX-Themes}{Beamer-LaTeX-Themes} from Liu Qilong
+
+\vspace{\baselineskip}
+
+In the following you find a brief introduction on how to use \LaTeX\ and the beamer package to prepare slides, based on the one written by \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} for \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation}
+
+This template is released under \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0} license
+
+\end{frame}
+
+% ==================///==================///==================///
+% ==================/// BODY'S PRESENTATION
+% ==================///==================///==================///
+
+\input{sections/introduction}
+
+\input{sections/personalization}
+
+\input{chapters/special_slides}
+
+\input{sections/summary}
+
+% ==================///==================///==================///
+% ==================/// END PRESENTATION
+% ==================///==================///==================///
+
+\backmatter
+\end{document}

@@ -1,0 +1,82 @@
+\section{Introduction}
+
+\begin{frame}{Beamer for slides}
+\begin{itemize}
+    \item We assume you can use \LaTeX; if you cannot,
+    \hrefcol{http://en.wikibooks.org/wiki/LaTeX/}{you can learn it here}
+    \item Beamer is one of the most popular and powerful document classes for presentations in \LaTeX
+    \item Beamer has also a detailed
+    \hrefcol{http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{user manual}
+    \item Here we will present only the most basic features to get you up to speed
+\end{itemize}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}{Beamer vs. PowerPoint}
+Compared to PowerPoint, using \LaTeX\ is better because:
+\begin{itemize}
+    \item It is not What-You-See-Is-What-You-Get, but What-You-\emph{Mean}-Is-What-You-Get:\\ you write the content, the computer does the typesetting
+    \item Produces a \texttt{pdf}: no problems with fonts, formulas, program versions
+    \item Easier to keep consistent style, fonts, highlighting, etc.
+    \item Math typesetting in \TeX\ is the best:
+\begin{equation*}
+    \mathrm{i}\,\hslash\frac{\partial}{\partial t} \Psi(\mathbf{r},t) = -\frac{\hslash^2}{2\,m}\nabla^2\Psi(\mathbf{r},t) + V(\mathbf{r})\Psi(\mathbf{r},t)
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Getting Started}
+\framesubtitle{Selecting the Theme}
+To start working with \texttt{beamer\_statale}, start a \LaTeX\ document with the preamble:
+\begin{colorblock}[black]{statalegrey}{Minimum Statale Beamer Document}
+    \verb|\documentclass{beamer}|\\
+    \verb|\usetheme{statale}|\\
+    \verb|\begin{document}|\\
+    \verb|\begin{frame}{Hello, world!}|\\
+    \verb|\end{frame}|\\
+    \verb|\end{document}|\\
+\end{colorblock}
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Title page}
+To set a typical title page, you call some commands in the preamble:
+\begin{block}{The Commands for the Title Page}
+\begin{verbatim}
+\title{Sample Title}
+\subtitle{Sample subtitle}
+\author{First Author, Second Author}
+\date{\today} % Can also be (ab)used for conference name &c.
+\end{verbatim}
+\end{block}
+You can then write out the title page with \verb|\maketitle|.
+
+To set a \textbf{background image} use the \verb|\titlebackground| command  before \verb|\maketitle|; its only argument is the name (or path) of a graphic file.
+
+If you use the \textbf{starred version} \verb|\titlebackground*|, the image  will be clipped to a split view on the right side of the title slide.
+\end{frame}
+
+%=======================================================================
+
+\begin{frame}[fragile]{Writing a Simple Slide}
+\framesubtitle{It's really easy!}
+\begin{itemize}[<+->]
+    \item A typical slide has bulleted lists
+    \item These can be uncovered in sequence
+\end{itemize}
+\begin{block}{Code for a Page with an Itemised List}<+->
+\begin{verbatim}
+\begin{frame}{Writing a Simple Slide}
+    \framesubtitle{It's really easy!}
+        \begin{itemize}[<+->]
+            \item A typical slide has bulleted lists
+        \item These can be uncovered in sequence
+\end{itemize}\end{frame}
+\end{verbatim}
+\end{block}
+
+\end{frame}
