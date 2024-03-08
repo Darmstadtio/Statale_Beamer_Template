@@ -1,12 +1,15 @@
+% ==================///==================///==================///
+% ==================/// COMMANDS AND PACKAGES STUFF
+% ==================///==================///==================///
+
+%*************************************************************************************
 % Template for Statale presentations with LaTeX beamer.
 %
-% Adapted by Giorgio Marchetti, ciao@gio.im for Statale presentations.
-% 
+% Adapted by Giorgio Marchetti, ciao@gio.im for Statale presentations. 
 % Original template by Federico Zenith, federico.zenith@sintef.no.
 % Derived (through several iterations) from Håvard Berland's
 % beamerthementnu class.
-%
-%
+%*************************************************************************************
 % This program is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
@@ -19,31 +22,32 @@
 %
 % You should have received a copy of the GNU General Public License
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%*************************************************************************************
 
-% TODO: remove top-right logo from title page
 
-\ProvidesPackage{beamertheme_statale}[2023/11/01]
+\ProvidesPackage{beamertheme_statale}[2024/03/08]
 
 \RequirePackage{etoolbox}
 \RequirePackage{tikz}
 
-% Force 16:9 aspect ratio
+% Force 16:9 aspect ratio ===========================================================
 \RequirePackage{geometry}
 \geometry{paperwidth=16cm,paperheight=9cm}
 
-% Caladea is a Cambria clone, Carlito a Calibri clone
+% Caladea is a Cambria clone, Carlito a Calibri clone ===============================
 \RequirePackage{caladea,carlito}
 \renewcommand{\familydefault}{\sfdefault}
 
-\RequirePackage{graphicx,statale_colors}
+\RequirePackage{graphicx,beamertheme_colours}
 
-% No navigation symbols
+% No navigation symbols =============================================================
 \setbeamertemplate{navigation symbols}{}
 
 \newcommand{\@footlineauthor}{\insertauthor \enspace$\vert$\enspace}
 \newcommand{\@footlinepayoff}{\@footlineauthor\inserttitle}
 \newcommand{\footlinepayoff}[1]{\renewcommand{\@footlinepayoff}{#1}}
-% Define footline content
+
+% Define footline content ===========================================================
 \setbeamertemplate{footline}{%
   \begin{beamercolorbox}[wd=\textwidth,ht=5mm,dp=3mm,rightskip=1cm,leftskip=1cm]{footline}
   \insertframenumber/\inserttotalframenumber
@@ -53,7 +57,7 @@
   \end{beamercolorbox}
 }
 
-% Set footline AND coordinate blocks with it
+% Set footline AND coordinate blocks with it ========================================
 \newcommand{\footlinecolor}[1]{% if #1 is empty, makes footline transparent
   \ifstrempty{#1}{%
     \footlinepayoff{}
@@ -67,13 +71,13 @@
     \setbeamercolor{block body}{fg=white,bg=#1}
   }%
 }
-\footlinecolor{} % Default: no footline
+\footlinecolor{} % Default: no footline 
 
-\pgfdeclareimage[width=0.09\paperwidth]{logo}{assets/logo_RGB}
-\pgfdeclareimage[width=0.09\paperwidth]{whitelogo}{assets/logo_RGB_negative}
+\pgfdeclareimage[width=0.09\paperwidth]{logo}{ASSETS/logo_RGB}
+\pgfdeclareimage[width=0.09\paperwidth]{whitelogo}{ASSETS/logo_RGB_negative}
 \newcommand{\@logo}{logo}
 
-% Set colours
+% Set colours =======================================================================
 % NOTE! Beamer colors should be set in the preamble. It often works fine in the 
 %       document itself, but NOT for normal text foreground.
 %       \themecolor should only be called from the preamble.
@@ -110,11 +114,14 @@
 \setbeamerfont{footline}{size=\scriptsize}
 \setbeamerfont{block title}{series=\centering\bfseries}
 
-% Code to get prettier boxes
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+
+
+% Code to get prettier boxes ========================================================
  \setbeamertemplate{blocks}[rounded]
 
-
-% Bullets in several levels
+% Bullets in several levels =========================================================
 \setbeamertemplate{itemize item}{\textbullet}
 \setbeamertemplate{itemize subitem}{\textemdash}
 \setbeamertemplate{itemize subsubitem}{\ensuremath{\circ}}
@@ -129,10 +136,10 @@
 	\endgroup
 }
 
-% Put the logo in each slide's top left area
+% Put the logo in each slide's top left area ========================================
 \setbeamertemplate{headline}{\hspace{0.06\textwidth}\pgfuseimage{\@logo}}
 
-% Define frame title and subtitle layout
+% Define frame title and subtitle layout ============================================
 \setbeamertemplate{frametitle}{%
   \vspace*{-3.5ex}
   \begin{beamercolorbox}[leftskip=2cm]{frametitle}%
@@ -147,7 +154,7 @@
 \newcommand{\course}[1]{\def\@courseLabel{#1}}
 \newcommand{\IDnumber}[1]{\def\@IDnumber{#1}}
 
-% Define the title page
+% Define the title page =============================================================
 \setbeamertemplate{title page}{%
   \vskip0pt plus 1filll%
   % Reposition the box in an inelegant way - but it works!
@@ -166,7 +173,7 @@
   \end{beamercolorbox}
 }
 
-% Define slide splitting dimensions (e.g. title and chapter slides)
+% Define slide splitting dimensions (e.g. title and chapter slides) =================
 \newcommand{\TikzSplitSlide}[1]{%
   \rule{0.56\paperwidth}{0pt}%
   \begin{tikzpicture}
@@ -189,7 +196,7 @@
 	\renewcommand{\@TitleBackground}{#1}%
 }
 
-% Overwrite the maketitle command for the title page
+% Overwrite the maketitle command for the title page ================================
 \renewcommand{\maketitle}{
 \begingroup
   \ifdefempty{\@TitleBackground}{}{% Skip if \@TitleBackground is empty
@@ -214,7 +221,7 @@
     }{}
 \makeatother
 
-% Define chapter environment
+% Define chapter environment ========================================================
 \newenvironment{chapter}[3][]{% Args: image (optional), color, frame title
   \begingroup
   \themecolor{main}
@@ -244,7 +251,7 @@
   \endgroup
 }
 
-% Define sidepic environment
+% Define sidepic environment ========================================================
 \newenvironment{sidepic}[2]{% Args: image, frame title
   \begingroup
   \setbeamertemplate{background}{%
@@ -266,7 +273,7 @@
   \endgroup
 }
 
-% Define backmatter
+% Define backmatter =================================================================
 \newcommand{\backmatter}[1][]{
 \begingroup
   \themecolor{main}
@@ -285,7 +292,7 @@
 \endgroup
 }
 
-% Define sectioning and table of contents
+% Define sectioning and table of contents ===========================================
 \AtBeginSection[]
 {
     \begingroup
@@ -296,13 +303,13 @@
     \endgroup
 }
 
-% style of section presented in the table of contents
+% style of section presented in the table of contents ===============================
 \setbeamertemplate{section in toc}{$\blacktriangleright$~\inserttocsection}
 
-% automate subtitle of each frame
+% automate subtitle of each frame ===================================================
 \makeatletter
     \pretocmd\beamer@checkframetitle{\framesubtitle{\thesection \, \secname}}
 \makeatother
 
-% avoid numbering of frames that are breaked into multiply slides
+% avoid numbering of frames that are breaked into multiply slides ===================
 \setbeamertemplate{frametitle continuation}{}

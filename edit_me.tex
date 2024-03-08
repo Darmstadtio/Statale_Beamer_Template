@@ -8,12 +8,13 @@
 
 \documentclass{beamer}
 \usepackage{amsfonts,amsmath,oldgerm}
+%\usetheme{config_statale_theme_statale}
 \usetheme{_statale}
 \usefonttheme[onlymath]{serif}
 
-\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
-\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
-\titlebackground*{assets/background}
+%\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+%\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+\titlebackground*{ASSETS/background}
 
 % ==================///==================///==================///
 % ==================/// SPLASH PAGE
@@ -43,19 +44,24 @@ In the following you find a brief introduction on how to use \LaTeX\ and the bea
 
 This template is released under \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0} license
 
+\vspace{\baselineskip}
+
+You can also find the template files in its \hrefcol{https://github.com/Darmstadtio/Statale_Beamer_Template}{Github repository}.
+
+
 \end{frame}
 
 % ==================///==================///==================///
 % ==================/// BODY'S PRESENTATION
 % ==================///==================///==================///
 
-\input{sections/introduction}
+\input{SECTIONS/introduction}
 
-\input{sections/personalization}
+\input{SECTIONS/personalization}
 
-\input{chapters/special_slides}
+\input{CHAPTERS/chapter_slides}
 
-\input{sections/summary}
+\input{SECTIONS/summary}
 
 % ==================///==================///==================///
 % ==================/// END PRESENTATION
